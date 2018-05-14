@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = current_user.microposts.page(params[:page])
+    @microposts = @user.microposts.page(params[:page])
   end
 
   def new
